@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        p {
+            font-family: sans-serif;
+        }
+
+        .result {
+            font-weight: bold;
+        }
+    </style>
+    <title>Pig Latin Translator</title>
+</head>
+
+<body>
+<div style="padding-left: 20px; ">
+    <h3>English to Pig Latin Translator</h3>
+    <p>Give any input string:</p>
+
+    <div class="form">
+        <form method="POST">
+            <input name="english_string" style="height: 20px;border-radius: 1px;width: 335px;">
+            <input style="background-color: lightsteelblue;border-radius: 5px;padding: 5px 40px;"
+                   type="submit">
+        </form>
+    </div>
+
+
+    {% if pig_latin_string %}
+    <p>The translated Pig Lating string is as follows
+        <span class="result">{{pig_latin_string}} </span>.</p>
+    {% endif %}
+
+    {% if empty_input %}
+    <p>Please do not give empty inputs!</p>
+    {% endif %}
+
+</div>
+</body>
+
+</html>
