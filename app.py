@@ -39,6 +39,8 @@ def translate():
             if is_input_empty(input_sentence):
                 return render_template('translator.html', empty_input=True)
 
+            # slice the input to get rid of extra quotes used to pass in the value
+            input_sentence = input_sentence[1:-1]
             pig_latin_string = pig_latin_translator.get_translated_string(input_sentence)
             resp = send_message(pig_latin_string)
 
